@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SwanMeetups.Models.Regions>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Available Regions</h3>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Region)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Region)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RegionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RegionID })
+        </td>
+    </tr>
+}
+
+</table>
